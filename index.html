@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f2e8" />
+    <meta
+      name="description"
+      content="행운의 로또 번호 6개를 간편하게 추천받아 보세요."
+    />
+    <title>오늘의 행운 번호</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Montserrat:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="오늘의 행운 번호 홈">
+        <span class="brand-mark">L</span>
+        <span>LUCKY PICK</span>
+      </a>
+      <p class="date" id="today"></p>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="eyebrow"><span></span> 오늘의 작은 설렘</div>
+        <h1 id="hero-title">행운은 가끔,<br /><em>숫자</em>로 찾아옵니다.</h1>
+        <p class="hero-copy">
+          고민은 잠시 내려놓고 버튼을 눌러보세요.<br />당신을 위한 여섯 개의 숫자를 골라드릴게요.
+        </p>
+
+        <div class="lottery-card">
+          <div class="card-topline">
+            <span>LOTTO 6/45</span>
+            <span>GOOD LUCK!</span>
+          </div>
+          <div class="balls" id="balls" aria-live="polite" aria-label="추천 번호">
+            <span class="ball ball-yellow">3</span>
+            <span class="ball ball-blue">11</span>
+            <span class="ball ball-red">19</span>
+            <span class="ball ball-gray">27</span>
+            <span class="ball ball-green">34</span>
+            <span class="ball ball-gray">42</span>
+          </div>
+          <div class="card-actions">
+            <button class="pick-button" id="pickButton" type="button">
+              <span>행운 번호 뽑기</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M14 7l5 5-5 5" />
+              </svg>
+            </button>
+            <button class="copy-button" id="copyButton" type="button" aria-label="번호 복사">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="8" y="8" width="11" height="11" rx="2" />
+                <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" />
+              </svg>
+            </button>
+          </div>
+          <p class="hint">버튼을 누를 때마다 새로운 번호가 생성됩니다.</p>
+        </div>
+      </section>
+
+      <aside class="history-panel" aria-labelledby="history-title">
+        <div class="history-heading">
+          <div>
+            <span class="section-number">01</span>
+            <h2 id="history-title">최근 추천</h2>
+          </div>
+          <button id="clearButton" class="clear-button" type="button">기록 지우기</button>
+        </div>
+        <div id="history" class="history-list"></div>
+        <p class="empty-history" id="emptyHistory">아직 저장된 번호가 없어요.<br />첫 행운을 뽑아보세요.</p>
+        <div class="note">
+          <span>NOTE</span>
+          <p>모든 번호는 무작위로 생성되며, 당첨을 보장하지 않습니다. 가벼운 마음으로 즐겨주세요.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <span>LUCKY PICK © 2026</span>
+      <span>오늘도 좋은 일이 생길 거예요.</span>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite">번호를 복사했어요!</div>
+  </body>
+</html>
