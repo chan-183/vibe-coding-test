@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b11" />
+    <meta name="description" content="30초 동안 빛나는 표적을 빠르게 터치하는 반응속도 게임" />
+    <title>NEON TAP — 30초 반응속도 게임</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="game.css" />
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header>
+      <a class="back" href="../">← LUCKY PICK</a>
+      <div class="sound-label"><span class="status-dot"></span> SYSTEM ONLINE</div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <p class="kicker">REACTION GAME / 30 SEC</p>
+        <h1 id="title"><span>NEON</span> TAP</h1>
+        <p class="description">빛나는 표적을 최대한 빠르게 터치하세요.<br />연속으로 맞히면 콤보 점수가 올라갑니다.</p>
+      </section>
+
+      <section class="game-shell">
+        <div class="scoreboard">
+          <div class="metric"><span>SCORE</span><strong id="score">0000</strong></div>
+          <div class="metric timer"><span>TIME</span><strong id="time">30.0</strong></div>
+          <div class="metric"><span>BEST</span><strong id="best">0000</strong></div>
+        </div>
+
+        <div class="arena" id="arena">
+          <div class="grid" aria-hidden="true"></div>
+          <div class="corner top-left"></div><div class="corner top-right"></div>
+          <div class="corner bottom-left"></div><div class="corner bottom-right"></div>
+
+          <div class="start-screen" id="startScreen">
+            <div class="radar"><span></span><i></i></div>
+            <h2 id="screenTitle">준비됐나요?</h2>
+            <p id="screenCopy">표적을 놓치지 말고 최대한 빠르게 터치하세요.</p>
+            <button id="startButton" type="button">게임 시작 <span>[ SPACE ]</span></button>
+          </div>
+
+          <button class="target" id="target" type="button" aria-label="표적 터치">
+            <span class="target-ring ring-one"></span>
+            <span class="target-ring ring-two"></span>
+            <span class="target-core"></span>
+          </button>
+          <div class="combo" id="combo">COMBO ×2</div>
+          <div class="flash-score" id="flashScore">+10</div>
+        </div>
+
+        <div class="game-footer">
+          <span>MISS <strong id="misses">0</strong></span>
+          <span class="tip">TIP — 빈 공간을 누르면 콤보가 초기화됩니다.</span>
+          <span>HIT <strong id="hits">0</strong></span>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>NEON TAP v1.0</span><span>MADE FOR KILLING TIME</span></footer>
+  </body>
+</html>
